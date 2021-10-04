@@ -2,6 +2,8 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 import uuid
 
+from django.db.models.fields import CharField
+
 
 class Floor(models.Model):
     name = models.CharField(max_length=100)
@@ -27,4 +29,12 @@ class Electorate(models.Model):
         primary_key=True, default=uuid.uuid4, editable=False)
 
     def __str__(self):
-        return self.name + " " + str(self.pass_key)
+        return self.name + " - " + str(self.pass_key)
+
+
+class Voted_list(models.Model):
+    std_id = CharField(max_length=8)
+    pass_key = CharField(max_length=100)
+
+    def __str__(self):
+        return self.id
