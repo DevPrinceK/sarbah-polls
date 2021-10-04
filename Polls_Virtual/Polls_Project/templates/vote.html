@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <h1 style="margin: 20px;">Vote</h1>
+</center>
+
+<div class="container" style="margin-top: 30px;">
+    <form method="POST" action="/counter/">
+        {% csrf_token %}
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                checked disabled>
+            <label class="form-check-label" for="exampleRadios1">
+                Click on a radio button to vote
+            </label>
+        </div>
+        <!--  -->
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                Glory Adade
+            </label>
+        </div>
+        <!--  -->
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+            <label class="form-check-label" for="exampleRadios3">
+                Prince Samuel
+            </label>
+        </div>
+
+        <center style="margin-top: 100px;">
+            <button type="submit" class="btn btn-primary">Vote</button>
+        </center>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center>
+    <h1 style="margin: 20px;">Floor</h1>
+</center>
+
+<div class="container">
+    <form method="POST" action="/vote/">
+        {% csrf_token %}
+        <fieldset>
+            <!-- <legend>Select Floor</legend> -->
+            <div class="mb-3">
+                <label for="floorRep" class="form-label">Select Floor</label>
+                <select id="floorRep" class="form-select">
+                    <option>Annex A Floor 1</option>
+                    <option>Annex B Floor 2</option>
+                    <option>Annex C Floor 1</option>
+                    <option>Annex D Floor 3</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container" style="margin:auto; margin-top: 30px;">
+    <!--  -->
+    <form method="POST" , action="/floor/">
+        {% csrf_token %}
+
+        <center>
+            <h1>Login</h1>
+        </center>
+
+        <div class="mb-3">
+            <label for="StudentID" class="form-label">Student ID</label>
+            <input type="text" class="form-control" id="StudentID" aria-describedby="StudentID">
+            <div id="StudentID" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="Password">
+            <div id="password" class="form-text">This is the key sent to your mail</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+
+{% endblock %}
