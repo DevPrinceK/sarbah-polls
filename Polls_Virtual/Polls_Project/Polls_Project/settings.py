@@ -17,10 +17,8 @@ SECRET_KEY = 'django-insecure-t@um5p^@%3ti39cjadzw1lhzzgn$mjfm&3m$rh^5z%t@xt3p*i
 DEBUG = True
 
 # NOTE
-# https://mshjcrec.herokuapp.com/ | https://git.heroku.com/mshjcrec.git |
-# https://git.heroku.com/mshjcrec.git | https://git.heroku.com/mshjcrec.git
-
-ALLOWED_HOSTS = ['https://mshjcrec.herokuapp.com']
+# https://sarbah-ec.herokuapp.com/ | https://git.heroku.com/sarbah-ec.git
+ALLOWED_HOSTS = ['sarbah-ec.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -115,25 +113,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # NOTE
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
-
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
-
-
-PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+
+# PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
 
 # Extra lookup directories for collectstatic to find static files
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
+# STATICFILES_DIRS = (
+#     # os.path.join(PROJECT_ROOT, 'static'),
+#     os.path.join(BASE_DIR, 'static')
+# )
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type

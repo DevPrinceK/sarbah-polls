@@ -23,15 +23,29 @@
     <!-- preloader -->
     <!-- <div class="loader">Loading...</div> -->
 
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+
     <!--  -->
     <!-- navigationbar starts -->
     <div class="container-fluid bg-primary">
         <nav class="container navbar navbar-light bg-primary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
+                    <!-- <center> -->
                     <img src=" {% static 'images\sarbah-logo.jpg' %} " alt="" width="50" height="42"
                         class="d-inline-block align-text-top">
-                    <span style="font-size: 23px;"> Sarbah Polls</span>
+                    <span style="font-size: 23px; color: white;" class="h1">
+                        Sarbah Polls
+                    </span>
+                    <!-- </center> -->
                 </a>
             </div>
         </nav>
@@ -44,9 +58,10 @@
     {% endblock %}
 
 
-
     <!-- footer -->
-    <div class="container bg-light" style="padding: 30px;position: fixed; bottom: 0; left: 0; right: 0;">
+
+    <div class="container bg-light"
+        {% block footerstyle %}style="padding: 30px;position: fixed; bottom: 0; left: 0; right: 0;" {% endblock %}>
         <!-- the center tag is obsolete but I am using it anyway  -->
         <center> Powered by: <a href="#">KPS-Technologies</a> </center>
     </div>

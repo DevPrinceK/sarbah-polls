@@ -25,9 +25,7 @@ def floor(request):
         voter = Electorate.objects.get(pk=pass_key)
 
         if voter.std_id == std_id:
-
             # validate electorate
-
             # Save list of those who logged in
             voted_form = Voted_listForm(request.POST)
             if voted_form.is_valid():
@@ -62,12 +60,5 @@ def ec_login(request):
 
 
 def ec_admin_result(request):
-    return render(request, 'ec_admin_result.html', {})
-
-
-# class Voted_list(models.Model):
-#     std_id = CharField(max_length=8)
-#     pass_key = CharField(max_length=100)
-
-#     def __str__(self):
-#         return self.id
+    reps = Rep.objects.all()
+    return render(request, 'ec_admin_result.html', {'reps': reps})
