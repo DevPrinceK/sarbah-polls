@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from Polls_Virtual.Polls_Project.polls_app.forms import Voted_listForm
+from .forms import Voted_listForm
 from .models import Floor
 from .models import Rep
 from .models import Electorate
@@ -19,19 +19,29 @@ def home(request):
 
 def floor(request):
     if request.method == 'POST':
-        # validate electorate
-        std_id = request.POST['sub']  # SUBJECT
-        body = request.POST['body']  # BODY
+        std_id = request.POST['std_id']  # SUBJECT
+        pass_key = request.POST['pass_key']  # BODY
 
+        voter = Electorate.objects.get(pk=pass_key)
 
-        # Save list of those who logged in
-        voted_form = Voted_listForm(request.POST)
-        if voted_form.is_valid():
-            voted_form.save()
-            #
-        return render(request, 'floor.html', {})
+        if voter.std_id == std_id:
+
+            # validate electorate
+
+            # Save list of those who logged in
+            voted_form = Voted_listForm(request.POST)
+            if voted_form.is_valid():
+                voted_form.save()
+                #
+            return render(request, 'floor.html', {})
+        else:
+            return render()
     else:
         return render(request, 'home.html', {})
+
+
+def invalid(request):
+    return render(request, 'invalid.html', {})
 
 
 def vote(request):
@@ -55,9 +65,9 @@ def ec_admin_result(request):
     return render(request, 'ec_admin_result.html', {})
 
 
-class Voted_list(models.Model):
-    std_id = CharField(max_length=8)
-    pass_key = CharField(max_length=100)
+# class Voted_list(models.Model):
+#     std_id = CharField(max_length=8)
+#     pass_key = CharField(max_length=100)
 
-    def __str__(self):
-        return self.id
+#     def __str__(self):
+#         return self.id

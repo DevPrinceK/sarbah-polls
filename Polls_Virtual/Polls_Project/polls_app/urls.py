@@ -10,6 +10,7 @@ urlpatterns = [
     path('counter/', views.counter, name='counter'),
     path('ec_login/', views.ec_login, name='ec_login'),
     path('ec_admin_result/', views.ec_admin_result, name='ec_admin_result'),
+    path('invalid/', views.invalid, name='invalid'),
     # path('counter/', views.counter, name='counter'),
 
 ]
