@@ -17,7 +17,8 @@ SECRET_KEY = 'django-insecure-t@um5p^@%3ti39cjadzw1lhzzgn$mjfm&3m$rh^5z%t@xt3p*i
 DEBUG = True
 
 # NOTE
-# https://mshjcrec.herokuapp.com/ | https://git.heroku.com/mshjcrec.git | https://git.heroku.com/mshjcrec.git
+# https://mshjcrec.herokuapp.com/ | https://git.heroku.com/mshjcrec.git |
+# https://git.heroku.com/mshjcrec.git | https://git.heroku.com/mshjcrec.git
 
 ALLOWED_HOSTS = ['https://mshjcrec.herokuapp.com']
 
