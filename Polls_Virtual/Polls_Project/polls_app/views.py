@@ -19,21 +19,21 @@ def home(request):
 
 def floor(request):
     if request.method == 'POST':
-        std_id = request.POST['std_id']  # SUBJECT
-        pass_key = request.POST['pass_key']  # BODY
+        # std_id = request.POST['std_id']  # SUBJECT
+        # pass_key = request.POST['pass_key']  # BODY
 
-        voter = Electorate.objects.get(pk=pass_key)
+        # voter = Electorate.objects.get(pk=pass_key)
 
-        if voter.std_id == std_id:
-            # validate electorate
-            # Save list of those who logged in
-            voted_form = Voted_listForm(request.POST)
-            if voted_form.is_valid():
-                voted_form.save()
-                #
-            return render(request, 'floor.html', {})
-        else:
-            return render()
+        # if voter.std_id == std_id:
+        #     # validate electorate
+        #     # Save list of those who logged in
+        #     voted_form = Voted_listForm(request.POST)
+        #     if voted_form.is_valid():
+        #         voted_form.save()
+        #         #
+        return render(request, 'floor.html', {})
+        # else:
+        #     return render()
     else:
         return render(request, 'home.html', {})
 
